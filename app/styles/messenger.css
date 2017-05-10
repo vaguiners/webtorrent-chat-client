@@ -1,0 +1,55 @@
+.wrap {
+  display: flex;
+  height: 100%;
+  flex: 1;
+}
+
+aside {
+  overflow-y: scroll;
+  padding: 2em;
+  flex: 1;
+}
+
+article {
+  flex: 4;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.conversation {
+  overflow-y: scroll;
+  flex: 1 1 auto;
+}
+
+.bottom-input {
+  flex: 0 0 auto;
+  display: flex;
+}
+
+#fileInputId {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.fileInputLabel {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    flex-flow: column;
+  }
+
+  aside {
+    flex: 0 0 auto;
+    height: 20%;
+    overflow: hidden;
+  }
+}
+
+

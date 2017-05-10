@@ -1,0 +1,118 @@
+<div class="wrap">
+  <aside>
+    <div class="container">
+      <p>friends:</p>
+      <ul>
+        <li ng-repeat="item in friends">
+          {{item.username}}
+        </li>
+      </ul>
+
+      <button class="btn btn-secondary" ng-click="checkMessages()">check!</button>
+
+      <!-- todo to remove -->
+      <br>
+
+      <ul ng-repeat="m in my">
+        <li>{{m.length}}</li>
+      </ul>
+      con
+      <ul ng-repeat="m in con">
+        <li>{{m.length}}</li>
+      </ul>
+      otCOn
+      {{otherControl.length}}
+      <br>
+      ot
+      {{ot.length}}
+      <!--<ul ng-repeat="m in otherControl">-->
+      <!--<li>{{m.length}}</li>-->
+      <!--</ul>-->
+      <!--ot-->
+      <!--<ul ng-repeat="m in ot">-->
+      <!--<li>{{m.length}}</li>-->
+      <!--</ul>-->
+
+      <p>Current user</p>
+      <ul ng-repeat="(key, val) in currentUser">
+        <li>{{key}}: {{val}}</li>
+      </ul>
+      <p>torrents {{getTorrents().length}}</p>
+      <ul ng-repeat="torrent in getTorrents()">
+        <li>{{torrent.infoHash}}</li>
+      </ul>
+      <br>
+
+    </div>
+
+
+  </aside>
+
+  <article>
+    <section class="conversation" scroll-glue>
+
+      <section class="module">
+
+        <!--todo wiadomość jako component-->
+        <ol class="discussion" ng-repeat="item in getConversation() | orderBy:'message.timestamp'">
+          <li ng-class="myDhtId===item.message.sender ? 'self' : 'other'">
+            <div class="avatar">
+              <img ng-src="images/avatar.gif" />
+            </div>
+            <div class="messages">
+              <p>{{$index + 1}}&nbsp;&nbsp;&nbsp;{{item.message.content}}</p>
+              <!--<p class="attachment"></p>-->
+              <!--<video id="attachment-{{item.infoHash}}"></video>-->
+              <time ng-repeat="sentBy in friends | filter:item.message.sender">{{sentBy.username}} • {{item.message.timestamp | date:'H:mm:ss'}}</time><br/>
+              <time>{{truncate(item.infoHash)}} • {{truncate(item.message.previousInfoHash)}}</time>
+            </div>
+          </li>
+        </ol>
+        <ol>
+          <li>
+            <p id="att"></p>
+          </li>
+        </ol>
+
+      </section>
+
+    </section>
+
+    <div class="bottom-input">
+
+      <div>
+
+        <form name="asdf" class="send-file-form">
+
+          <input id="upload" name="upload" type="file" multiple>
+
+
+          <!--<label class="fileInputLabel btn btn-default" for="fileInputId"><i class="glyphicon glyphicon-picture"></i></label>-->
+
+
+
+          <!--<input id="fileInputId" type="file" onchange="this.submit()" >-->
+          <!--<button type="submit">Download</button>-->
+                 <!--onchange="angular.element(this).scope().handleFiles(this.files)">>-->
+          <!--<input id="fileInputId" type="file" ng-file-select="onFileSelect($files)" >-->
+          <!--<input id="fileInputId" type="file" file-model='fileInput.pictureInput' onchange='angular.element(this).scope().sendFile()'>-->
+        </form>
+
+      </div>
+      <div>
+
+        <form class="send-message-form" role="form" ng-submit="sendMessage()">
+          <div class="input-group">
+            <input ng-model="textInput" type="text" class="form-control" id="inputMessage" placeholder="Type message..." autocomplete="off">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="submit">Send!</button>
+            </span>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </article>
+
+</div>

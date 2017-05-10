@@ -1,0 +1,63 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+}
+
+/* Custom page header */
+.header {
+  flex: 0 0 auto;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+.navbar {
+  margin-bottom: 0;
+  padding: 0 10px 0 10px;
+}
+
+.main-view {
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row;
+}
+
+.ng-scope {
+  width: 100%;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
