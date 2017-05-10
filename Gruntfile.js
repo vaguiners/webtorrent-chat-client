@@ -30,12 +30,12 @@ module.exports = function (grunt) {
 
     browserify: {
       client: {
-        src: 'app/scripts/torrent.js',
-        dest: 'app/bundled-scripts/torrent2.js'
+        src: 'app/scripts-to-bundle/torrent.js',
+        dest: 'app/scripts/torrent2.js'
       },
       client2: {
-        src: 'app/scripts/controllers/messenger.js',
-        dest: 'app/bundled-scripts/messenger2.js'
+        src: 'app/scripts-to-bundle/messenger.js',
+        dest: 'app/scripts/controllers/messenger2.js'
       }
     },
 
