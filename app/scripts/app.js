@@ -26,7 +26,7 @@ angular
     'ngLodash',
     'file-model' // input[file]
   ])
-  .constant('ENDPOINT_URI', 'http://192.168.1.5:5000/')
+  .constant('ENDPOINT_URI', 'https://webtorrent-chat-server.herokuapp.com/')
   // .constant('ENDPOINT_URI', 'http://192.168.43.156:5000/')
   .constant('USER_ROLES', {
     all: '*',
